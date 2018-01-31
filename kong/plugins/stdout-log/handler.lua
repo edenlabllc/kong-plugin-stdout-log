@@ -12,9 +12,9 @@ function StdoutLogHandler:new()
 end
 
 function StdoutLogHandler:log(conf)
-    StdoutLogHandler.super.log(self)
-    local message = basic_serializer.serialize(ngx)
-    ngx.log(ngx.NOTICE, cjson.encode(message))
+  StdoutLogHandler.super.log(self)
+  local message = basic_serializer.serialize(ngx)
+  print(cjson.encode(message))
 end
 
 return StdoutLogHandler
